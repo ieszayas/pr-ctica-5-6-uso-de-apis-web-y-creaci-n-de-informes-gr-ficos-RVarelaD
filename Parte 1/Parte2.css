@@ -1,0 +1,297 @@
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: url('../media/PortadaBlog.jpg') no-repeat center center/cover;
+    /* Imagen de fondo */
+    height: 60vh;
+    /* Ajusta la altura según lo desees */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Superposición oscura para mejorar la visibilidad del texto */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Hace que el contenido se muestre encima del overlay */
+}
+
+.hero .btn {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.hero .btn:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Button Hover */
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Carousel */
+.carousel-inner img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    /* Redimensiona la imagen para que ocupe las dimensiones definidas */
+}
+
+/* Cards */
+.icon-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border: none;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.icon-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Oscurece el fondo */
+    z-index: 1;
+}
+
+.icon-card .card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.icon-card i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+    font-weight: bold;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Table Styling */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.table tbody td {
+    vertical-align: middle;
+}
+
+/* Form Styling */
+form .form-control {
+    border-radius: 0.25rem;
+}
+
+form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+form .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+form .btn-danger:hover {
+    background-color: #bd2130;
+    border-color: #bd2130;
+}
+
+/* Adjustments for Media Queries */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        height: auto;
+    }
+
+    .icon-card {
+        height: 200px;
+    }
+
+    .card-img-left {
+        max-width: 50%;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+/* Opcion de modo Oscuro/Claro */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.navbar-dark-mode {
+    background-color: #1f1f1f;
+}
+
+.table-dark-mode {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.table-dark-mode th {
+    background-color: #2c2c2c;
+}
+
+/* Estilo para la imagen en el modal */
+#modalImage {
+    width: 100%;
+    /* Ocupa el 100% del ancho del modal */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    max-height: 80vh;
+    /* Limita la altura máxima al 80% de la altura de la ventana */
+    object-fit: contain;
+    /* Asegura que la imagen se ajuste sin recortarse */
+}
+
+/* Estilo para el contenedor del carrusel */
+#galleryCarousel {
+    position: relative;
+    /* Asegúrate de que el contenedor sea relativo */
+}
+
+/* Estilo para los botones de navegación del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    /* Posiciona los botones de forma absoluta */
+    top: 40%;
+    /* Coloca los botones en el centro vertical */
+    width: 40px;
+    height: 50px;
+    background-color: #9c9c9c;
+    color: #0059b9;
+    /* Color de las flechas */
+    display: flex;
+    /* Usar flexbox para centrar el icono */
+    align-items: center;
+    /* Centrar verticalmente el icono */
+    justify-content: center;
+    /* Centrar horizontalmente el icono */
+}
+
+/* Cambiar el color de los iconos al pasar el mouse */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #5d5d5d;
+}
+
+/* Ajustar la posición de los botones */
+.carousel-control-prev {
+    left: -10px;
+}
+
+.carousel-control-next {
+    right: -10px;
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #282c34;
+    /* Fondo oscuro */
+    color: #61dafb;
+    /* Color del texto */
+    border-radius: 10px;
+    padding: 20px auto;
+    width: 300px;
+    margin: 20px auto;
+    /* Centrar el reloj */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    /* Sombra */
+    font-family: 'Courier New', Courier, monospace;
+    /* Fuente monoespaciada */
+}
+
+.time {
+    font-size: 3rem;
+    /* Tamaño de la hora */
+}
+
+.date {
+    font-size: 1.2rem;
+    /* Tamaño de la fecha */
+}
+
+/* Estilo para el reloj en modo oscuro */
+.clock-dark-mode {
+    background-color: #404349; /* Fondo más claro que el fondo oscuro general */
+    color: #61dafb; /* Color del texto blanco */
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Blog de Aventuras JS Parte 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Parte2.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Aventuriza-T</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="Parte2_1.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Más</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="#servicios">Servicios</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#contacto">Contáctame</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Barra de búsqueda solo estética -->
+                <form class="d-flex ms-auto">
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+                </form>
+                <!-- Botón de Modo Oscuro/Claro -->
+                <button id="toggleTheme" class="btn btn-outline-light ms-2">Modo Oscuro</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seccion Blog -->
+    <div class="container mt-5" id="blog">
+        <h2 class="text-center mb-4">Mis últimas aventuras</h2>
+        <div class="row g-4">
+
+            <!-- Card Vertical -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="../media/montañas1.jpg" class="card-img-top" alt="Montañas">
+                    <div class="card-body">
+                        <h5 class="card-title">Aventura en las montañas</h5>
+                        <p class="card-text">Descubre las montañas más hermosas y cómo llegar a ellas.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Horizontal -->
+            <div class="col-md-8">
+                <div class="card flex-md-row">
+                    <img src="../media/playas1.jpg" class="card-img-left w-50" alt="Playas">
+                    <div class="card-body">
+                        <h5 class="card-title">Relax en playas paradisíacas</h5>
+                        <p class="card-text">Sumérgete en aguas cristalinas y disfruta de un entorno único.</p>
+                        <a href="#" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards con Iconos -->
+        <div class="row g-4 mt-5">
+            <div class="col-md-4">
+                <div class="card icon-card text-center text-white py-4"
+                    style="background-image: url('../media/exploracion1.jpg');">
+                    <div class="overlay"></div>
+                    <div class="card-body">
+                        <i class="bi bi-compass"></i>
+                        <h5 class="card-title">Exploración</h5>
+                        <p class="card-text">Encuentra rutas nuevas y vive la aventura del descubrimiento.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card icon-card text-center text-white py-4"
+                    style="background-image: url('../media/fotografia.jpg');">
+                    <div class="overlay"></div>
+                    <div class="card-body">
+                        <i class="bi bi-camera"></i>
+                        <h5 class="card-title">Fotografía</h5>
+                        <p class="card-text">Captura momentos únicos en tus viajes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card icon-card text-center text-white py-4"
+                    style="background-image: url('../media/Destinounico.jpg');">
+                    <div class="overlay"></div>
+                    <div class="card-body">
+                        <i class="bi bi-geo-alt"></i>
+                        <h5 class="card-title">Destinos únicos</h5>
+                        <p class="card-text">Descubre lugares escondidos y mágicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-white py-3 mt-5">
+        <p>© 2025 Mini Blog de Aventuras | Diseñado con Bootstrap</p>
+        <div class="social-icons">
+            <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Parte2.js"></script>
+</body>
+
+</html>
