@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Crear el gráfico
             new Chart(ctx, {
-                type: "bar",
+                type: "pie",
                 data: {
                     labels: cities,
                     datasets: [{
                         label: "Usuarios por Ciudad",
                         data: userCounts,
-                        backgroundColor: "rgba(54, 162, 235, 0.6)",
-                        borderColor: "rgba(54, 162, 235, 1)",
+                        backgroundColor: "rgb(0, 123, 255)",
+                        borderColor: "rgb(172, 172, 172)",
                         borderWidth: 1
                     }]
                 },

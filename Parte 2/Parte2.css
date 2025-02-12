@@ -295,3 +295,8 @@ body.dark-mode {
     background-color: #404349; /* Fondo más claro que el fondo oscuro general */
     color: #61dafb; /* Color del texto blanco */
 }
+
+canvas {
+    align-items: center;
+    justify-content: center;
+}
