@@ -1,4 +1,11 @@
-/* Navbar */
+/*
+ * Descripción: Estilos CSS para la página web de Mini Blog de Aventuras,
+ * utilizando Bootstrap, efectos personalizados y estilos para componentes
+ * como Navbar, Hero, Carousel, Cards, Footer, formularios y modo Oscuro/Claro.
+*/
+
+/*         Navbar              */
+
 .navbar {
     background: linear-gradient(90deg, #007bff, #00c6ff);
 }
@@ -7,7 +14,8 @@
     font-weight: bold;
 }
 
-/* Hero Section */
+/*        Sección Hero         */
+
 .hero {
     position: relative;
     background: url('../media/PortadaBlog.jpg') no-repeat center center/cover;
@@ -51,13 +59,15 @@
     border-color: #007bff;
 }
 
-/* Button Hover */
+/*      Botón Hover (alertas)  */
+
 .btn-danger:hover {
     background-color: #c82333;
     border-color: #bd2130;
 }
 
-/* Carousel */
+/*          Carousel           */
+
 .carousel-inner img {
     width: 300px;
     height: 300px;
@@ -65,7 +75,8 @@
     /* Redimensiona la imagen para que ocupe las dimensiones definidas */
 }
 
-/* Cards */
+/*           Cards             */
+
 .icon-card {
     position: relative;
     background-size: cover;
@@ -101,7 +112,8 @@
     margin-bottom: 10px;
 }
 
-/* Footer */
+/*           Footer            */
+
 footer {
     background: linear-gradient(90deg, #007bff, #00c6ff);
     padding: 10px 0;
@@ -124,7 +136,8 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Table Styling */
+/*      Estilos para Tablas    */
+
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
@@ -139,7 +152,8 @@ footer a:hover {
     vertical-align: middle;
 }
 
-/* Form Styling */
+/*    Estilos para Formularios */
+
 form .form-control {
     border-radius: 0.25rem;
 }
@@ -164,7 +178,8 @@ form .btn-danger:hover {
     border-color: #bd2130;
 }
 
-/* Adjustments for Media Queries */
+/*   Media Queries (Responsive)*/
+
 @media (max-width: 768px) {
     .hero {
         height: 50vh;
@@ -188,7 +203,8 @@ form .btn-danger:hover {
     }
 }
 
-/* Opcion de modo Oscuro/Claro */
+/*      Modo Oscuro/Claro      */
+
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
@@ -207,7 +223,8 @@ body.dark-mode {
     background-color: #2c2c2c;
 }
 
-/* Estilo para la imagen en el modal */
+/*  Imagen en Modal y Carrusel */
+
 #modalImage {
     width: 100%;
     /* Ocupa el 100% del ancho del modal */
@@ -216,16 +233,14 @@ body.dark-mode {
     max-height: 80vh;
     /* Limita la altura máxima al 80% de la altura de la ventana */
     object-fit: contain;
-    /* Asegura que la imagen se ajuste sin recortarse */
 }
 
-/* Estilo para el contenedor del carrusel */
 #galleryCarousel {
     position: relative;
-    /* Asegúrate de que el contenedor sea relativo */
+    /* Asegura que el contenedor sea relativo para posicionar elementos hijos */
 }
 
-/* Estilo para los botones de navegación del carrusel */
+/* Botones de navegación del carrusel */
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
@@ -245,13 +260,13 @@ body.dark-mode {
     /* Centrar horizontalmente el icono */
 }
 
-/* Cambiar el color de los iconos al pasar el mouse */
+/* Hover en botones del carrusel */
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
     background-color: #5d5d5d;
 }
 
-/* Ajustar la posición de los botones */
+/* Posicionamiento específico de los botones */
 .carousel-control-prev {
     left: -10px;
 }
@@ -259,6 +274,8 @@ body.dark-mode {
 .carousel-control-next {
     right: -10px;
 }
+
+/*       Estilos del Reloj     */
 
 .clock {
     display: flex;
@@ -293,7 +310,7 @@ body.dark-mode {
 /* Estilo para el reloj en modo oscuro */
 .clock-dark-mode {
     background-color: #404349; /* Fondo más claro que el fondo oscuro general */
-    color: #61dafb; /* Color del texto blanco */
+    color: #61dafb; /* Color del texto */
 }
 
 canvas {

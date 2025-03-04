@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Blog de Aventuras JS Parte 2</title>
+    <!-- Inclusión de Bootstrap y estilos personalizados -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="Parte2.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
@@ -12,7 +13,8 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!--       Navbar       -->
+           
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Aventuriza-T</a>
@@ -48,12 +50,13 @@
         </div>
     </nav>
 
-    <!-- Seccion Blog -->
+    <!--    Sección Blog    -->
+        
     <div class="container mt-5" id="blog">
         <h2 class="text-center mb-4">Mis últimas aventuras</h2>
         <div class="row g-4">
 
-            <!-- Card Vertical -->
+            <!-- Card Vertical: Presenta una aventura (imagen, título, descripción y enlace) -->
             <div class="col-md-4">
                 <div class="card">
                     <img src="../media/montañas1.jpg" class="card-img-top" alt="Montañas">
@@ -65,7 +68,7 @@
                 </div>
             </div>
 
-            <!-- Card Horizontal -->
+            <!-- Card Horizontal: Combina imagen y contenido en disposición horizontal -->
             <div class="col-md-8">
                 <div class="card flex-md-row">
                     <img src="../media/playas1.jpg" class="card-img-left w-50" alt="Playas">
@@ -78,7 +81,8 @@
             </div>
         </div>
 
-        <!-- Cards con Iconos -->
+        <!--   Cards con Iconos  -->
+           
         <div class="row g-4 mt-5">
             <div class="col-md-4">
                 <div class="card icon-card text-center text-white py-4"
@@ -116,7 +120,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!--       Footer        -->
+           
     <footer class="text-center text-white py-3 mt-5">
         <p>© 2025 Mini Blog de Aventuras | Diseñado con Bootstrap</p>
         <div class="social-icons">
@@ -126,6 +131,7 @@
         </div>
     </footer>
 
+    <!-- Scripts de Bootstrap y funcionalidad personalizada -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="Parte2.js"></script>
 </body>

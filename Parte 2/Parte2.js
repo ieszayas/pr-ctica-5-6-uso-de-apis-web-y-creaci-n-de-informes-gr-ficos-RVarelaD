@@ -1,9 +1,20 @@
+/*
+ * Descripción: Maneja la funcionalidad de la página:
+ *  - Obtención y visualización de datos mediante Chart.js y tabla.
+ *  - Validación y manejo del formulario de contacto.
+ *  - Alternancia entre modo oscuro y claro.
+ *  - Funcionalidades de carrusel y modal de imágenes.
+ *  - Actualización en tiempo real del reloj digital.
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
 
+    // URL de la API para obtener usuarios (para el gráfico)
     const apiUrl = "https://jsonplaceholder.typicode.com/users";
+    // Contexto del canvas para el gráfico de Chart.js
     const ctx = document.getElementById("cityChart").getContext("2d");
 
-    // Obtener los datos de la API
+    // Obtener datos de la API y construir un gráfico circular
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -18,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const cities = Object.keys(cityCounts);
             const userCounts = Object.values(cityCounts);
 
-            // Crear el gráfico
+            // Crear el gráfico circular (pie chart)
             new Chart(ctx, {
                 type: "pie",
                 data: {
@@ -44,15 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error al obtener los datos:", error));
 
-
+    // Segunda llamada a la API para poblar la tabla de "aventuras"
     const apiUrl2 = "https://jsonplaceholder.typicode.com/users"; // Reemplaza con la URL real de la API
     const aventurasBody = document.getElementById("aventurasBody");
 
     fetch(apiUrl2)
         .then(response => response.json())
         .then(data => {
-            aventurasBody.innerHTML = ""; // Limpiar la tabla antes de insertar datos
+            // Limpiar la tabla antes de insertar datos
+            aventurasBody.innerHTML = "";
             data.forEach((aventura, index) => {
+                // Crear una fila con los datos de cada usuario
                 const row = document.createElement("tr");
                 row.innerHTML = `
                     <td>${index + 1}</td>
@@ -65,10 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error al obtener las aventuras:", error));
 
+    // Evento para validar y manejar el envío del formulario de contacto
     document.getElementById("contactForm").addEventListener("submit", function (e) {
-        // Evitar que el formulario se envíe para validar primero
+        // Prevenir el envío para validar los campos primero
         e.preventDefault();
 
+        // Obtener referencias a los campos del formulario
         const nameField = document.getElementById("name");
         const emailField = document.getElementById("email");
         const messageField = document.getElementById("message");
@@ -77,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let isValid = true;
 
-        // Validación del nombre
+        // Validación del campo de nombre (solo letras y espacios)
         const nameError = document.getElementById("nameError");
         if (!/^[a-zA-Z\s]+$/.test(nameField.value)) {
             nameError.classList.remove("d-none");
@@ -86,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             nameError.classList.add("d-none");
         }
 
-        // Validación del correo electrónico
+        // Validación del campo de correo electrónico
         const emailError = document.getElementById("emailError");
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailPattern.test(emailField.value)) {
@@ -96,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
             emailError.classList.add("d-none");
         }
 
-        // Validación de los checkboxes
+        // Validación de checkboxes (al menos uno debe estar seleccionado)
         const checkboxError = document.getElementById("checkboxError");
         if (!termsField.checked && !subscribeField.checked) {
             checkboxError.classList.remove("d-none");
@@ -105,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
             checkboxError.classList.add("d-none");
         }
 
-        // Si todo es válido, mostramos el toast de éxito
+        // Si la validación es exitosa, se muestra un toast de éxito y se resetea el formulario
         if (isValid) {
             const toastEnviar = new bootstrap.Toast(document.getElementById("toastEnviar"));
             toastEnviar.show();
@@ -114,21 +129,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Agregar evento para limpiar el formulario y mostrar el toast
+    // Evento para limpiar el formulario y mostrar un toast de limpieza
     document.getElementById("clearFormButton").addEventListener("click", function () {
         document.getElementById("contactForm").reset();
         const toastLimpiar = new bootstrap.Toast(document.getElementById("toastLimpiar"));
         toastLimpiar.show();
     });
 
-    // Funcionalidad de Modo Oscuro/Claro
+    // Modo Oscuro/Claro
+    
     const toggleThemeButton = document.getElementById("toggleTheme");
     toggleThemeButton.addEventListener("click", function () {
+        // Alternar clase 'dark-mode' en el body para cambiar tema
         document.body.classList.toggle("dark-mode");
         const navbar = document.querySelector(".navbar");
         const table = document.querySelector(".table");
         const clock = document.getElementById("digitalClock");
 
+        // Ajustes de estilos según el modo activado
         if (document.body.classList.contains("dark-mode")) {
             navbar.classList.add("navbar-dark-mode");
             toggleThemeButton.textContent = "Modo Claro";
@@ -144,7 +162,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Funcionalidad para agrandar la imagen al hacer clic
+    // Modal y Carrusel de Imágenes
+    
+    // Permite agrandar la imagen al hacer clic (mostrándola en un modal)
     const carouselImages = document.querySelectorAll('.carousel-item img');
     const modalImage = document.getElementById('modalImage');
 
@@ -154,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Funcionalidad para cambiar las imágenes del carrusel dinámicamente
+    // Cambiar las imágenes del carrusel de forma dinámica
     const changeImagesButton = document.getElementById('changeImages');
     const newImages = [
         '../media/imagen-Cambiar1.png',
@@ -173,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Funcionalidad para reiniciar el carrusel a las imágenes originales
+    // Reiniciar el carrusel a las imágenes originales
     const originalImages = [
         '../media/playas1.jpg',
         '../media/fotografia.jpg',
@@ -192,7 +212,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Función para actualizar el reloj en tiempo real
+    // Actualización del Reloj Digital
+
+    /**
+     * Función que actualiza el reloj digital y la fecha en tiempo real.
+     */
     function updateClock() {
         const now = new Date();
         const hours = String(now.getHours()).padStart(2, '0');
@@ -205,10 +229,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const day = String(now.getDate()).padStart(2, '0');
         const dateString = `${year}-${month}-${day}`;
 
+        // Actualizar los elementos HTML con la hora y fecha actual
         document.getElementById('time').textContent = timeString;
         document.getElementById('date').textContent = dateString;
     }
 
+    // Actualizar el reloj cada segundo
     setInterval(updateClock, 1000);
     updateClock();
 });
